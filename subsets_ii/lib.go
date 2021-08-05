@@ -1,3 +1,5 @@
+// https://leetcode.com/explore/featured/card/august-leetcoding-challenge-2021/613/week-1-august-1st-august-7th/3837/
+
 package subsetsii
 
 import (
@@ -24,7 +26,7 @@ func subsetsWithDup(nums []int) [][]int {
 			for _, item := range result {
 				fmt.Println("result in loop", result)
 				fmt.Println("item", item)
-				newCurrent = append(newCurrent, append(item, n))
+				newCurrent = append(newCurrent, deepAppendIntSlice(item, n))
 				fmt.Println("result after append", result)
 				fmt.Println("---")
 			}
@@ -33,4 +35,10 @@ func subsetsWithDup(nums []int) [][]int {
 		result = append(result, current...)
 	}
 	return result
+}
+
+func deepAppendIntSlice(item []int, n int) (res []int) {
+	res = append(res, item...)
+	res = append(res, n)
+	return
 }
