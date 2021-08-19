@@ -30,3 +30,12 @@ func (pq MaxPQ) sink(i int) {
 		i = j
 	}
 }
+
+func NewMaxPQ() MaxPQ {
+	return MaxPQ([]int{0})
+}
+
+func (pq *MaxPQ) Insert(n int) {
+	*pq = append(*pq, n)
+	pq.swim(len(*pq) - 1)
+}

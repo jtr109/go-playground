@@ -33,3 +33,10 @@ func TestSinkDeeper(t *testing.T) {
 	expected := MaxPQ([]int{0, 6, 4, 5, 1, 3, 2})
 	assert.Equal(t, expected, pq)
 }
+
+func TestInsert(t *testing.T) {
+	pq := MaxPQ([]int{0, 5, 4, 3, 2, 1})
+	pq.Insert(6)
+	expected := MaxPQ([]int{0, 6, 4, 5, 2, 1, 3})
+	assert.Equal(t, expected, pq)
+}
