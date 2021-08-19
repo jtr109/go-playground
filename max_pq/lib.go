@@ -47,7 +47,9 @@ func (pq *MaxPQ) PopMax() (int, bool) {
 	res := (*pq)[1]
 	last := (*pq)[len(*pq)-1]
 	*pq = (*pq)[:len(*pq)-1]
-	(*pq)[1] = last
-	pq.sink(1)
+	if len(*pq) > 1 {
+		(*pq)[1] = last
+		pq.sink(1)
+	}
 	return res, true
 }

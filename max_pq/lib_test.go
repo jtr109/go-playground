@@ -49,3 +49,39 @@ func TestPopMax(t *testing.T) {
 	expected := MaxPQ([]int{0, 5, 4, 3, 2, 1})
 	assert.Equal(t, expected, pq)
 }
+
+func TestMaxPQ(t *testing.T) {
+	pq := NewMaxPQ()
+
+	pq.Insert(4)
+	pq.Insert(5)
+	pq.Insert(1)
+
+	res, ok := pq.PopMax()
+	assert.True(t, ok)
+	assert.Equal(t, 5, res)
+
+	pq.Insert(2)
+	pq.Insert(6)
+	pq.Insert(3)
+
+	res, ok = pq.PopMax()
+	assert.True(t, ok)
+	assert.Equal(t, 6, res)
+	res, ok = pq.PopMax()
+	assert.True(t, ok)
+	assert.Equal(t, 4, res)
+	res, ok = pq.PopMax()
+	assert.True(t, ok)
+	assert.Equal(t, 3, res)
+	res, ok = pq.PopMax()
+	assert.True(t, ok)
+	assert.Equal(t, 2, res)
+	res, ok = pq.PopMax()
+	assert.True(t, ok)
+	assert.Equal(t, 1, res)
+
+	res, ok = pq.PopMax()
+	assert.False(t, ok)
+	assert.Equal(t, 0, res)
+}
