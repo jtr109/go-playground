@@ -40,3 +40,12 @@ func TestInsert(t *testing.T) {
 	expected := MaxPQ([]int{0, 6, 4, 5, 2, 1, 3})
 	assert.Equal(t, expected, pq)
 }
+
+func TestPopMax(t *testing.T) {
+	pq := MaxPQ([]int{0, 6, 4, 5, 2, 1, 3})
+	res, ok := pq.PopMax()
+	assert.True(t, ok)
+	assert.Equal(t, res, 6)
+	expected := MaxPQ([]int{0, 5, 4, 3, 2, 1})
+	assert.Equal(t, expected, pq)
+}

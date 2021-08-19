@@ -39,3 +39,15 @@ func (pq *MaxPQ) Insert(n int) {
 	*pq = append(*pq, n)
 	pq.swim(len(*pq) - 1)
 }
+
+func (pq *MaxPQ) PopMax() (int, bool) {
+	if len(*pq) <= 1 {
+		return 0, false
+	}
+	res := (*pq)[1]
+	last := (*pq)[len(*pq)-1]
+	*pq = (*pq)[:len(*pq)-1]
+	(*pq)[1] = last
+	pq.sink(1)
+	return res, true
+}
