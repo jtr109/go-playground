@@ -9,7 +9,7 @@ func splitListToParts(head *ListNode, k int) (res []*ListNode) {
 	current := head
 	for _, length := range lengthList(head, k) {
 		res = append(res, current)
-		current = move(current, length)
+		current = cut(current, length)
 	}
 	return
 }
@@ -36,10 +36,22 @@ func lengthList(ln *ListNode, k int) (res []int) {
 	return
 }
 
-func move(ln *ListNode, step int) *ListNode {
+func cut(ln *ListNode, length int) (next *ListNode) {
 	current := ln
-	for i := 0; i < step; i++ {
+	if current == nil {
+		return nil
+	}
+	for i := 0; i < length; i++ {
+		if current == nil {
+			return nil
+		}
+		if i == length-1 {
+			// the current one is the last element
+			break
+		}
 		current = current.Next
 	}
-	return current
+	next = current.Next
+	current.Next = nil
+	return next
 }
