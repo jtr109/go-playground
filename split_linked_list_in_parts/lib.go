@@ -15,6 +15,9 @@ func splitListToParts(head *ListNode, k int) (res []*ListNode) {
 }
 
 func count(ln *ListNode) (count int) {
+	if ln == nil {
+		return
+	}
 	for current := ln; current.Next != nil; current = current.Next {
 		count++
 	}

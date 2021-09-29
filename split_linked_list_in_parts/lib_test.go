@@ -157,7 +157,7 @@ func TestCut(t *testing.T) {
 	assert.Equal(t, (*ListNode)(nil), next.Next.Next)
 }
 
-// func TestSubmission2(t *testing.T) {
-// 	head := (*ListNode)(nil)
-// 	assert.Equal(t, []*ListNode{nil, nil, nil}, splitListToParts(head, 3))
-// }
+func TestSubmission2(t *testing.T) {
+	head := (*ListNode)(nil)
+	assert.Equal(t, []*ListNode{nil, nil, nil}, splitListToParts(head, 3))
+}
