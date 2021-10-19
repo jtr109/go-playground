@@ -14,7 +14,7 @@ func TestExample1(t *testing.T) {
 }
 
 func TestExample2(t *testing.T) {
-	nums := []int{0, 2, 3, 3, 4, 0, 4, 2}
+	nums := []int{0, 1, 2, 2, 3, 0, 4, 2}
 	val := 2
 	expected := 5
 	assert.Equal(t, expected, removeElement(nums, val))

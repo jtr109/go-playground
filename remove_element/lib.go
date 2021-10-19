@@ -12,7 +12,8 @@ func removeElement(nums []int, val int) int {
 			index++
 			continue
 		}
-		nums[index], nums[length-1] = nums[length-1], nums[index]
+		// 这里直接覆盖 index 位置的值即可，length-1 位置的值是否修改没有意义
+		nums[index] = nums[length-1]
 		length--
 	}
 	return length
