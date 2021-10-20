@@ -33,3 +33,6 @@ func reverse(nums []int) {
 		nums[i], nums[j] = nums[j], nums[i]
 	}
 }
+
+// time complexity: O(n)
+// space complexity: O(n)
