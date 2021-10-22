@@ -42,3 +42,6 @@ func minWindow(s string, t string) string {
 	}
 	return minSubstring
 }
+
+// time complexity: O(N)
+// space complexity: O(N)
