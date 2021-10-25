@@ -17,3 +17,9 @@ func TestExample1(t *testing.T) {
 	expected := [][]int{{1, 2, 3}, {8, 9, 4}, {7, 6, 5}}
 	assert.Equal(t, expected, generateMatrix(n))
 }
+
+func TestSubmission1(t *testing.T) {
+	n := 2
+	expected := [][]int{{1, 2}, {4, 3}}
+	assert.Equal(t, expected, generateMatrix(n))
+}

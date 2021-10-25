@@ -1,46 +1,44 @@
-package spiralmatrixii
+// https://leetcode.com/problems/spiral-matrix-ii/
 
-const (
-	RIGHT = iota
-	DOWN
-	LEFT
-	UP
-)
+package spiralmatrixii
 
 func generateMatrix(n int) [][]int {
 	matrix := initializeMatrix(n)
 	i := 0
 	j := 0
 	number := 1
-	for lineLength := n - 1; lineLength > 1; lineLength-- {
+	for ; n > 0; n = n - 2 {
+		matrix[i][j] = number
+		if n == 1 {
+			break
+		}
 		// right move
-		for step := 0; step < lineLength; step++ {
-			matrix[i][j] = number
+		for step := 0; step < n-1; step++ {
 			number++
 			j++
+			matrix[i][j] = number
 		}
 		// down move
-		for step := 0; step < lineLength; step++ {
-			matrix[i][j] = number
+		for step := 0; step < n-1; step++ {
 			number++
 			i++
+			matrix[i][j] = number
 		}
 		// left move
-		for step := 0; step < lineLength; step++ {
-			matrix[i][j] = number
+		for step := 0; step < n-1; step++ {
 			number++
 			j--
+			matrix[i][j] = number
 		}
 		// up move
-		for step := 0; step < lineLength-1; step++ {
-			matrix[i][j] = number
+		for step := 0; step < n-2; step++ {
 			number++
 			i--
+			matrix[i][j] = number
 		}
-		matrix[i][j] = number
+		// move into the inner circle
 		number++
 		j++
-		matrix[i][j] = number
 	}
 	return matrix
 }
@@ -55,18 +53,4 @@ func initializeMatrix(n int) [][]int {
 		result = append(result, line)
 	}
 	return result
-}
-
-func changeDirection(direction int) (newDirection int) {
-	switch direction {
-	case RIGHT:
-		newDirection = DOWN
-	case DOWN:
-		newDirection = LEFT
-	case LEFT:
-		newDirection = UP
-	case UP:
-		newDirection = RIGHT
-	}
-	return
 }
