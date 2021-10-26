@@ -17,6 +17,9 @@ func convertListNodeToArray(head *ListNode) []int {
 }
 
 func convertArrayToListNode(array []int) *ListNode {
+	if len(array) == 0 {
+		return nil
+	}
 	head := &ListNode{
 		Val: array[0],
 	}
@@ -33,8 +36,20 @@ func convertArrayToListNode(array []int) *ListNode {
 func TestExample1(t *testing.T) {
 	head := convertArrayToListNode([]int{1, 2, 6, 3, 4, 5, 6})
 	val := 6
-	removeElements(head, val)
-	result := convertListNodeToArray(head)
 	expected := []int{1, 2, 3, 4, 5}
-	assert.Equal(t, expected, result)
+	assert.Equal(t, expected, convertListNodeToArray(removeElements(head, val)))
+}
+
+func TestExample2(t *testing.T) {
+	head := convertArrayToListNode([]int{})
+	val := 1
+	expected := []int{}
+	assert.Equal(t, expected, convertListNodeToArray(removeElements(head, val)))
+}
+
+func TestExample3(t *testing.T) {
+	head := convertArrayToListNode([]int{7, 7, 7, 7})
+	val := 7
+	expected := []int{}
+	assert.Equal(t, expected, convertListNodeToArray(removeElements(head, val)))
 }

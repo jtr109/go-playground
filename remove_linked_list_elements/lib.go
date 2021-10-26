@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/remove-linked-list-elements/
+
 package removelinkedlistelements
 
 type ListNode struct {
@@ -6,15 +8,19 @@ type ListNode struct {
 }
 
 func removeElements(head *ListNode, val int) *ListNode {
-	var last, current *ListNode = nil, head
-	for current != nil {
-		if current.Val == val {
-			last.Next = current.Next
-			current = current.Next
+	if head == nil {
+		return nil
+	}
+	current := head
+	for current.Next != nil {
+		if current.Next.Val == val {
+			current.Next = current.Next.Next
 		} else {
-			last = current
 			current = current.Next
 		}
+	}
+	if head.Val == val {
+		head = head.Next
 	}
 	return head
 }
