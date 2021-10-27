@@ -2,21 +2,20 @@
 
 package swapnodesinpairs
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import (
+	"github.com/jtr109/lcutils/listnode"
+)
 
-func swapPairs(head *ListNode) *ListNode {
+func swapPairs(head *listnode.ListNode) *listnode.ListNode {
 	if head == nil {
 		return nil
 	} else if head.Next == nil {
 		return head
 	}
-	virtualHead := &ListNode{
+	virtualHead := &listnode.ListNode{
 		Next: head,
 	}
-	var previous *ListNode = virtualHead
+	var previous *listnode.ListNode = virtualHead
 	current := head
 	for current != nil && current.Next != nil {
 		// move current.Next before current
