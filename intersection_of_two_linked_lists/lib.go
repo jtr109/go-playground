@@ -1,9 +1,13 @@
+// https://leetcode.com/problems/intersection-of-two-linked-lists/
+
 package intersectionoftwolinkedlists
 
 import "github.com/jtr109/lcutils/listnode"
 
 type ListNode = listnode.ListNode
 
+// time complexity: O(N)
+// space complexity: O(1)
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	lengthA := lengthListNode(headA)
 	lengthB := lengthListNode(headB)
