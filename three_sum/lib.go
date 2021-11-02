@@ -37,3 +37,5 @@ func threeSum(nums []int) [][]int {
 	}
 	return result
 }
+
+// time complexity: O(n)
