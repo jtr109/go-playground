@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/ransom-note/
+
 package ransomnote
 
 func canConstruct(ransomNote string, magazine string) bool {
