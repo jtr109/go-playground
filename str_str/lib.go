@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/implement-strstr/
+
 package strstr
 
 func strStr1(haystack string, needle string) int {
