@@ -2,37 +2,6 @@
 
 package slidingwindowmaximum
 
-func maxSlidingWindow1(nums []int, k int) []int {
-	result := []int{}
-	queue := []int{}
-	left := 0
-	for right := 0; right < len(nums); right++ {
-		// pop left
-		if right >= k { // pop from the queue if the window is out-of-filled
-			// pop queue
-			if queue[0] == nums[left] {
-				queue = queue[1:]
-			}
-			left++
-		}
-		// process after the new element was pushed into the queue
-		for len(queue) > 0 && queue[0] <= nums[right] { // pop all numbers lte new number on the right
-			queue = queue[1:]
-		}
-		queue = append(queue, nums[right])
-		if right < k-1 { // not update the window is not filled
-			continue
-		}
-		// append max number in result
-		if len(queue) > 1 {
-			result = append(result, queue[0])
-		} else {
-			result = append(result, queue[len(queue)-1])
-		}
-	}
-	return result
-}
-
 type Deque struct {
 	elements []int
 }
