@@ -13,7 +13,9 @@ func TestLengthListNode(t *testing.T) {
 }
 
 func TestExample1(t *testing.T) {
-	headA := listnode.ConvertArrayToListNode([]int{4, 1, 8, 4, 5})
-	headB := listnode.ConvertArrayToListNode([]int{5, 6, 1, 8, 4, 5})
-	assert.Equal(t, 8, getIntersectionNode(headA, headB).Val)
+	opA := listnode.NewOperatorFromSlice([]int{4, 1, 8, 4, 5}) // 4, 1, 8, 4, 5
+	intersection, _ := opA.Get(2)
+	opB := listnode.NewOperatorFromSlice([]int{5, 6, 1}) // 5, 6, 1, 8, 4, 5
+	opB.Append(intersection)
+	assert.Equal(t, 8, getIntersectionNode(opA.Head(), opB.Head()).Val)
 }
