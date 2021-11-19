@@ -5,14 +5,15 @@ package binarytreerightsideview
 import (
 	"testing"
 
+	"github.com/jtr109/lcutils/nilint"
 	"github.com/jtr109/lcutils/treenode"
 	"github.com/stretchr/testify/assert"
 )
 
-type NilInt = treenode.NilInt
+type NilInt = nilint.NilInt
 
-var NewInt = treenode.NewInt
-var NewNil = treenode.NewNil
+var NewInt = nilint.NewInt
+var NewNil = nilint.NewNil
 
 func TestExample1(t *testing.T) {
 	op := treenode.NewOperator()
