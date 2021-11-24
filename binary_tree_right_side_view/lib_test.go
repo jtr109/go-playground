@@ -16,8 +16,7 @@ var NewInt = nilint.NewInt
 var NewNil = nilint.NewNil
 
 func TestExample1(t *testing.T) {
-	op := treenode.NewOperator()
-	op.FromSlice([]NilInt{
+	root := treenode.FromSlice([]NilInt{
 		NewInt(1),
 		NewInt(2),
 		NewInt(3),
@@ -27,14 +26,13 @@ func TestExample1(t *testing.T) {
 		NewInt(4),
 	})
 	expected := []int{1, 3, 4}
-	actual := rightSideView(op.Root())
+	actual := rightSideView(root)
 	assert.Equal(t, expected, actual)
 }
 
 func TestExample3(t *testing.T) {
-	op := treenode.NewOperator()
-	op.FromSlice([]NilInt{})
+	root := treenode.FromSlice([]NilInt{})
 	expected := []int{}
-	actual := rightSideView(op.Root())
+	actual := rightSideView(root)
 	assert.Equal(t, expected, actual)
 }

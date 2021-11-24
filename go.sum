@@ -6,6 +6,8 @@ github.com/jtr109/lcutils v1.0.10 h1:JIHGG1jb3zWXvl+0+ztZkXTLbraWaU5VP6j+/EU8pag
 github.com/jtr109/lcutils v1.0.10/go.mod h1:hzQAkf1kgYQhtIdO3CuArK+ezpKBSKNKknuvAoYFI60=
 github.com/jtr109/lcutils v1.0.12 h1:s/Ojx7fn0BDWf3xfWDUtnXRjUueTKoPveNOdKZcsfgI=
 github.com/jtr109/lcutils v1.0.12/go.mod h1:hzQAkf1kgYQhtIdO3CuArK+ezpKBSKNKknuvAoYFI60=
+github.com/jtr109/lcutils v1.0.13 h1:cZIHo6A9I+h4dPDk3NQTw1W9JrFqfQlZZkZjLTs0B3g=
+github.com/jtr109/lcutils v1.0.13/go.mod h1:hzQAkf1kgYQhtIdO3CuArK+ezpKBSKNKknuvAoYFI60=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=

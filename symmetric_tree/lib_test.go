@@ -18,9 +18,8 @@ func TestExample1(t *testing.T) {
 		nilint.NewInt(4),
 		nilint.NewInt(3),
 	}
-	op := treenode.NewOperator()
-	op.FromSlice(root)
-	assert.True(t, isSymmetric(op.Root()))
+
+	assert.True(t, isSymmetric(treenode.FromSlice(root)))
 }
 
 func TestExample2(t *testing.T) {
@@ -33,7 +32,6 @@ func TestExample2(t *testing.T) {
 		nilint.NewNil(),
 		nilint.NewInt(3),
 	}
-	op := treenode.NewOperator()
-	op.FromSlice(root)
-	assert.False(t, isSymmetric(op.Root()))
+	treenode.FromSlice(root)
+	assert.False(t, isSymmetric(treenode.FromSlice(root)))
 }

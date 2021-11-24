@@ -14,11 +14,7 @@ var NewInt = nilint.NewInt
 var NewNil = nilint.NewNil
 
 func assertWorks(t *testing.T, root *[]NilInt, expected *[]NilInt) {
-	op := treenode.NewOperator()
-	op.FromSlice(*root)
-	actualOperator := treenode.NewOperator()
-	actualOperator.SetRoot(invertTree(op.Root()))
-	assert.Equal(t, *expected, actualOperator.ToSlice())
+	assert.Equal(t, treenode.FromSlice(*expected), invertTree(treenode.FromSlice(*root)))
 }
 
 func TestExample1(t *testing.T) {
