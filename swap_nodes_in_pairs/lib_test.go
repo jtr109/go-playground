@@ -12,7 +12,7 @@ func TestExample1(t *testing.T) {
 	expected := []int{2, 1, 4, 3}
 	assert.Equal(
 		t,
-		listnode.NewOperator().FromSlice(expected).Head(),
-		swapPairs(listnode.NewOperator().FromSlice(head).Head()),
+		listnode.FromSlice(expected),
+		swapPairs(listnode.FromSlice(head)),
 	)
 }

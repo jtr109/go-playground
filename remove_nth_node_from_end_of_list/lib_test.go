@@ -10,8 +10,8 @@ import (
 func isWorks(t *testing.T, head []int, n int, expected []int) {
 	assert.Equal(
 		t,
-		listnode.NewOperator().FromSlice(expected).Head(),
-		removeNthFromEnd(listnode.NewOperator().FromSlice(head).Head(), n),
+		listnode.FromSlice(expected),
+		removeNthFromEnd(listnode.FromSlice(head), n),
 	)
 }
 

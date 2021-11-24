@@ -9,7 +9,7 @@ import (
 
 func TestExample1(t *testing.T) {
 	arr := []int{3, 2, 0, -4}
-	head := listnode.NewOperator().FromSlice(arr).Head()
+	head := listnode.FromSlice(arr)
 	head.Next.Next.Next.Next = head.Next
 	expected := 2
 	assert.Equal(t, expected, detectCycle(head).Val)
