@@ -42,7 +42,7 @@ func main() {
 				if !ban.visit(ip) {
 					atomic.AddInt64(&success, 1)
 				}
-			}(j)
+			}(j) // learn: send j as parameter is important
 		}
 
 	}
