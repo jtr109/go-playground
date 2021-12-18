@@ -29,9 +29,11 @@ func main() {
 			i++
 			alphaCh <- struct{}{}
 		}
+		close(alphaCh)
 		ch <- struct{}{}
 	}()
 
 	numCh <- struct{}{}
 	<-ch
+	close(ch)
 }
