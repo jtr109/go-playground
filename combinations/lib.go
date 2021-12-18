@@ -18,6 +18,12 @@ func combineSlice(k int, s []int) [][]int {
 		}
 		return res
 	}
+	if k == len(s) {
+		res = append(res, s)
+		return res
+	} else if k > len(s) {
+		return [][]int{}
+	}
 	for i, e := range s {
 		subRes := combineSlice(k-1, s[i+1:])
 		for _, r := range subRes {
