@@ -2,35 +2,28 @@
 
 package combinations
 
-func combine(n int, k int) [][]int {
-	s := []int{}
-	for i := 1; i <= n; i++ {
-		s = append(s, i)
-	}
-	return combineSlice(k, s)
+var result [][]int
+var path []int
+
+func init() {
+	result = [][]int{}
+	path = []int{}
 }
 
-func combineSlice(k int, s []int) [][]int {
-	res := [][]int{}
-	if k == 1 {
-		for _, e := range s {
-			res = append(res, []int{e})
-		}
-		return res
+func backtracking(n, k, start int) {
+	if k == len(path) {
+		r := []int{}
+		result = append(result, append(r, path...))
+		return
 	}
-	if k == len(s) {
-		res = append(res, s)
-		return res
-	} else if k > len(s) {
-		return [][]int{}
+	for i := start; i <= n-(k-len(path))+1; i++ {
+		path = append(path, i)
+		backtracking(n, k, i+1)
+		path = path[:len(path)-1]
 	}
-	for i, e := range s {
-		subRes := combineSlice(k-1, s[i+1:])
-		for _, r := range subRes {
-			r_ := []int{e}
-			r_ = append(r_, r...)
-			res = append(res, r_)
-		}
-	}
-	return res
+}
+
+func combine(n, k int) [][]int {
+	backtracking(n, k, 1)
+	return result
 }
